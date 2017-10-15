@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ignatievanton/Desktop/c++/serverNix/main.cpp
+sys/types.h
+-
+sys/socket.h
+-
+netinet/in.h
+-
+iostream
+-
+unistd.h
+-
+

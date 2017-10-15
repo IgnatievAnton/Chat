@@ -1,0 +1,14 @@
+#!/bin/bash
+cmake ~/Desktop/c++/serverNix/
+let i=0
+cat version.txt | while read line 
+do 
+ echo $line
+ let "e = line"
+ echo $e
+done 
+echo $e+1
+echo program build
+make
+echo program create
+
