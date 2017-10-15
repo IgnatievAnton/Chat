@@ -7,4 +7,4 @@ ECHO %vers% >>ServerVersion.txt
 qmake -o Makefile chatterbox.pro
 make
 echo exe file create on path /relese.
-git.but
+git.bat

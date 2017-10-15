@@ -106,7 +106,6 @@ debug/qrc_qmake_qmake_immediate.cpp: debug/qmake_qmake_immediate.qrc \
 		chatterbox.pro.user \
 		MainWindow.cpp \
 		Makefile \
-		images.qrc \
 		git.bat \
 		release/main.o \
 		release/moc_MainWindow.o \
