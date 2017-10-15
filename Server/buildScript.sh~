@@ -1,14 +1,13 @@
 #!/bin/bash
 cmake ~/Desktop/c++/serverNix/
-let i=0
-cat version.txt | while read line 
-do 
- echo $line
- let "e = line"
- echo $e
-done 
-echo $e+1
 echo program build
 make
+i=$(( $(cat version.txt) + 1))
+echo $i > version.txt 
 echo program create
+cd ..
+git add --all
+git commit -m "New build Server version $i"
+git tag Server $i
+git push -u origin master
 
