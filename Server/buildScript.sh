@@ -10,5 +10,4 @@ git add --all
 git commit -m "New build Server version $i"
 git tag ServerVers$i
 git push -u origin master
-IgnatievAnton
-anton42306
+
