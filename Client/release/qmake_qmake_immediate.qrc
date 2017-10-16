@@ -15,6 +15,5 @@
 <file alias="ServerVersion.txt">C:/git/Chat/Client/ServerVersion.txt</file>
 <file alias="ui_MainWindow.h">C:/git/Chat/Client/ui_MainWindow.h</file>
 <file alias="debug/qmake_qmake_immediate.qrc">C:/git/Chat/Client/debug/qmake_qmake_immediate.qrc</file>
-<file alias="release/qmake_qmake_immediate.qrc">C:/git/Chat/Client/release/qmake_qmake_immediate.qrc</file>
 </qresource>
 </RCC>
