@@ -13,3 +13,4 @@ echo exe file create on path /relese.
 c: 
 cd C:\git\Chat\Client
 git.bat
+pause
