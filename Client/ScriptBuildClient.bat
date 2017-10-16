@@ -14,3 +14,5 @@ c:
 cd C:\git\Chat\Client
 git.bat
 pause
+pause
+pause
