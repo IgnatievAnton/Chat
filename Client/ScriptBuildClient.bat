@@ -8,3 +8,5 @@ qmake -o Makefile chatterbox.pro
 make
 echo exe file create on path /relese.
 git.bat
+echo New version push on git
+pause 
