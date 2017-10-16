@@ -9,7 +9,7 @@ make
 echo exe file create on path /relese.
 d:
 cd qt\5.6\msvc2015_64\bin
-windeployqt.exe C:\git\Chat\Client\relese\chatterbox.exe
+windeployqt.exe C:\git\Chat\Client\release\chatterbox.exe
 c:
 cd C:\git\Chat\Client
 git.bat
