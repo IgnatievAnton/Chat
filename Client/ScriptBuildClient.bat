@@ -11,5 +11,8 @@ d:
 cd qt\5.6\msvc2015_64\bin
 windeployqt.exe C:\git\Chat\Client\release\chatterbox.exe
 c:
+cd C:\git\Chat\Client\relese
+DEL /F /S /Q /A qrc_qmake_qmake_immediate.cpp
 cd C:\git\Chat\Client
-
+compil32 /cc setuppcreatescript.iss
+git.bat
