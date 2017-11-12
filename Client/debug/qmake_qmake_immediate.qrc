@@ -5,6 +5,8 @@
 <file alias="client.pro.user">C:/git/Chat/Client/client.pro.user</file>
 <file alias="git.bat">C:/git/Chat/Client/git.bat</file>
 <file alias="instructionRunScriptForClient.txt">C:/git/Chat/Client/instructionRunScriptForClient.txt</file>
+<file alias="libgcc_s_dw2-1.dll">C:/git/Chat/Client/libgcc_s_dw2-1.dll</file>
+<file alias="libstdc++-6.dll">C:/git/Chat/Client/libstdc++-6.dll</file>
 <file alias="main.cpp">C:/git/Chat/Client/main.cpp</file>
 <file alias="MainWindow.cpp">C:/git/Chat/Client/MainWindow.cpp</file>
 <file alias="MainWindow.h">C:/git/Chat/Client/MainWindow.h</file>

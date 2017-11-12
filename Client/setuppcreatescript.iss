@@ -36,6 +36,8 @@ Source: "C:\git\Chat\Client\release\libGLESV2.dll"; DestDir: "{app}"; Flags: ign
 Source: "C:\git\Chat\Client\release\opengl32sw.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\git\Chat\Client\release\Qt5Core.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\git\Chat\Client\release\Qt5Gui.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\git\Chat\Client\libgcc_s_dw2-1.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\git\Chat\Client\libstdc++-6.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\git\Chat\Client\release\Qt5Network.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\git\Chat\Client\release\Qt5Svg.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\git\Chat\Client\release\Qt5Widgets.dll"; DestDir: "{app}"; Flags: ignoreversion
