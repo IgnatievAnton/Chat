@@ -13,12 +13,12 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QFormLayout>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
-#include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
@@ -41,20 +41,18 @@ public:
     QWidget *chatPage;
     QGridLayout *gridLayout;
     QTextEdit *roomTextEdit;
-    QListWidget *userListWidget;
-    QLineEdit *sayLineEdit;
     QPushButton *sayButton;
+    QFormLayout *nameLine;
+    QLineEdit *sayLineEdit;
     QWidget *loginPage;
     QGridLayout *gridLayout_3;
     QSpacerItem *verticalSpacer;
     QSpacerItem *horizontalSpacer;
     QFrame *loginFrame;
     QGridLayout *gridLayout_2;
-    QLabel *label;
-    QLineEdit *serverLineEdit;
+    QPushButton *loginButton;
     QLabel *label_2;
     QLineEdit *userLineEdit;
-    QPushButton *loginButton;
     QSpacerItem *horizontalSpacer_2;
     QSpacerItem *verticalSpacer_2;
 
@@ -62,7 +60,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(723, 600);
+        MainWindow->resize(925, 640);
         MainWindow->setStyleSheet(QLatin1String("#titleLabel {\n"
 "background: white;\n"
 "color: blue;\n"
@@ -96,6 +94,7 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(titleLabel->sizePolicy().hasHeightForWidth());
         titleLabel->setSizePolicy(sizePolicy);
+        titleLabel->setMaximumSize(QSize(16777215, 16777215));
 
         verticalLayout->addWidget(titleLabel);
 
@@ -112,19 +111,8 @@ public:
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         roomTextEdit = new QTextEdit(chatPage);
         roomTextEdit->setObjectName(QStringLiteral("roomTextEdit"));
-        roomTextEdit->setReadOnly(true);
 
-        gridLayout->addWidget(roomTextEdit, 0, 0, 1, 1);
-
-        userListWidget = new QListWidget(chatPage);
-        userListWidget->setObjectName(QStringLiteral("userListWidget"));
-
-        gridLayout->addWidget(userListWidget, 0, 1, 1, 2);
-
-        sayLineEdit = new QLineEdit(chatPage);
-        sayLineEdit->setObjectName(QStringLiteral("sayLineEdit"));
-
-        gridLayout->addWidget(sayLineEdit, 1, 0, 1, 2);
+        gridLayout->addWidget(roomTextEdit, 0, 1, 1, 1);
 
         sayButton = new QPushButton(chatPage);
         sayButton->setObjectName(QStringLiteral("sayButton"));
@@ -133,9 +121,19 @@ public:
         sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(sayButton->sizePolicy().hasHeightForWidth());
         sayButton->setSizePolicy(sizePolicy1);
-        sayButton->setMaximumSize(QSize(50, 16777215));
+        sayButton->setMaximumSize(QSize(150, 50));
 
-        gridLayout->addWidget(sayButton, 1, 2, 1, 1);
+        gridLayout->addWidget(sayButton, 1, 3, 1, 1);
+
+        nameLine = new QFormLayout();
+        nameLine->setObjectName(QStringLiteral("nameLine"));
+
+        gridLayout->addLayout(nameLine, 0, 3, 1, 1);
+
+        sayLineEdit = new QLineEdit(chatPage);
+        sayLineEdit->setObjectName(QStringLiteral("sayLineEdit"));
+
+        gridLayout->addWidget(sayLineEdit, 1, 0, 1, 2);
 
         stackedWidget->addWidget(chatPage);
         loginPage = new QWidget();
@@ -159,32 +157,22 @@ public:
         gridLayout_2 = new QGridLayout(loginFrame);
         gridLayout_2->setSpacing(20);
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
-        label = new QLabel(loginFrame);
-        label->setObjectName(QStringLiteral("label"));
-
-        gridLayout_2->addWidget(label, 0, 0, 1, 1);
-
-        serverLineEdit = new QLineEdit(loginFrame);
-        serverLineEdit->setObjectName(QStringLiteral("serverLineEdit"));
-
-        gridLayout_2->addWidget(serverLineEdit, 0, 1, 1, 1);
-
-        label_2 = new QLabel(loginFrame);
-        label_2->setObjectName(QStringLiteral("label_2"));
-
-        gridLayout_2->addWidget(label_2, 1, 0, 1, 1);
-
-        userLineEdit = new QLineEdit(loginFrame);
-        userLineEdit->setObjectName(QStringLiteral("userLineEdit"));
-
-        gridLayout_2->addWidget(userLineEdit, 1, 1, 1, 1);
-
         loginButton = new QPushButton(loginFrame);
         loginButton->setObjectName(QStringLiteral("loginButton"));
         sizePolicy1.setHeightForWidth(loginButton->sizePolicy().hasHeightForWidth());
         loginButton->setSizePolicy(sizePolicy1);
 
         gridLayout_2->addWidget(loginButton, 2, 1, 1, 1);
+
+        label_2 = new QLabel(loginFrame);
+        label_2->setObjectName(QStringLiteral("label_2"));
+
+        gridLayout_2->addWidget(label_2, 0, 0, 1, 1);
+
+        userLineEdit = new QLineEdit(loginFrame);
+        userLineEdit->setObjectName(QStringLiteral("userLineEdit"));
+
+        gridLayout_2->addWidget(userLineEdit, 0, 1, 1, 1);
 
 
         gridLayout_3->addWidget(loginFrame, 1, 1, 1, 1);
@@ -205,16 +193,11 @@ public:
         verticalLayout->addWidget(mainFrame);
 
         MainWindow->setCentralWidget(centralwidget);
-        QWidget::setTabOrder(serverLineEdit, userLineEdit);
-        QWidget::setTabOrder(userLineEdit, loginButton);
-        QWidget::setTabOrder(loginButton, roomTextEdit);
-        QWidget::setTabOrder(roomTextEdit, userListWidget);
-        QWidget::setTabOrder(userListWidget, sayLineEdit);
+        QWidget::setTabOrder(loginButton, sayLineEdit);
         QWidget::setTabOrder(sayLineEdit, sayButton);
 
         retranslateUi(MainWindow);
         QObject::connect(sayLineEdit, SIGNAL(returnPressed()), sayButton, SLOT(animateClick()));
-        QObject::connect(serverLineEdit, SIGNAL(returnPressed()), userLineEdit, SLOT(setFocus()));
         QObject::connect(userLineEdit, SIGNAL(returnPressed()), loginButton, SLOT(animateClick()));
 
         stackedWidget->setCurrentIndex(0);
@@ -226,11 +209,10 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
-        titleLabel->setText(QApplication::translate("MainWindow", "Chat", 0));
+        titleLabel->setText(QApplication::translate("MainWindow", "Ofice Char", 0));
         sayButton->setText(QApplication::translate("MainWindow", "\320\236\320\272", 0));
-        label->setText(QApplication::translate("MainWindow", "Server name:", 0));
-        label_2->setText(QApplication::translate("MainWindow", "User name:", 0));
         loginButton->setText(QApplication::translate("MainWindow", "Login", 0));
+        label_2->setText(QApplication::translate("MainWindow", "User name:", 0));
     } // retranslateUi
 
 };

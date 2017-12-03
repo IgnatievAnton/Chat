@@ -1,5 +1,6 @@
 #include "MainWindow.h"
 #include <QRegExp>
+#include "qdynamicbutton.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
@@ -14,9 +15,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 
 void MainWindow::on_loginButton_clicked()
 {
-     //stackedWidget->setCurrentWidget(chatPage); //For testing Chat page
+    stackedWidget->setCurrentWidget(chatPage); //For testing Chat page
+    socket->connectToHost("127.0.0.1", 4200);
 
-    socket->connectToHost(serverLineEdit->text(), 4200);
 }
 
 
@@ -43,9 +44,24 @@ void MainWindow::readyRead()
         if(usersRegex.indexIn(line) != -1)
         {
             QStringList users = usersRegex.cap(1).split(",");
-            userListWidget->clear();
+            qDebug() <<users;
+
+
+            QLayoutItem *child;
+            while ((child = nameLine->takeAt(0)) != 0)
+            {
+                delete child->widget();
+                delete child;
+            }
             foreach(QString user, users)
-                new QListWidgetItem(QPixmap(":/user.png"), user, userListWidget);
+            {
+
+                QDynamicButton *button = new QDynamicButton(this);
+                button ->setText(user);
+                button ->setFixedSize(150,50);
+                button ->setStyleSheet("background-color: white");
+                nameLine->addWidget(button);
+            }
         }
         else if(messageRegex.indexIn(line) != -1)
         {
@@ -61,4 +77,9 @@ void MainWindow::connected()
 {
     stackedWidget->setCurrentWidget(chatPage);
     socket->write(QString("/me:" + userLineEdit->text() + "\n").toUtf8());
+}
+
+void MainWindow::newChat()
+{
+
 }

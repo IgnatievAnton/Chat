@@ -3,6 +3,7 @@
 
 #include <QtWidgets/QMainWindow>
 #include "ui_MainWindow.h"
+#include "qdynamicbutton.h"
 
 class MainWindow : public QMainWindow, public Ui::MainWindow
 {
@@ -15,9 +16,10 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
         void on_loginButton_clicked();
 
         void on_sayButton_clicked();
-
+        void newChat();
         void readyRead();
         void connected();
+
 
     private:
         QTcpSocket *socket;

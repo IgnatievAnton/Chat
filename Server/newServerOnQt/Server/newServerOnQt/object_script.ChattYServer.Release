@@ -1,0 +1,12 @@
+INPUT(
+./release\main.o
+./release\getTime.o
+./release\master.o
+./release\room.o
+./release\User.o
+./release\message.o
+./release\server.o
+./release\thread.o
+./release\moc_thread.o
+./release\moc_server.o
+);
