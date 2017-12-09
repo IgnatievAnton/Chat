@@ -1,3 +1,0 @@
-# options: -translation lf -encoding utf-8
-
-/home/ignatievanton/Desktop/c++/serverNix/bin/Debug/serverNix A5CB07D7-DA6B-941E-3D60-04136AB524B2 zlib

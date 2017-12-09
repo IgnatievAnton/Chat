@@ -1,1 +1,0 @@
-/home/ignatievanton/Desktop/github/Chat/Server/CMakeFiles/main.dir
